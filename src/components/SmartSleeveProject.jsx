@@ -154,10 +154,10 @@ const SmartSleeveProject = () => {
                 <h3>🎯 Accuracy</h3>
                 <p>95% accuracy in muscle fatigue detection</p>
               </div>
-                              <div className="result-item">
-                  <h3>⚡ Performance</h3>
-                  <p>Real-time processing with &lt;100ms latency</p>
-                </div>
+              <div className="result-item">
+                <h3>⚡ Performance</h3>
+                <p>Real-time processing with under 100ms latency</p>
+              </div>
               <div className="result-item">
                 <h3>🔋 Battery Life</h3>
                 <p>8+ hours of continuous operation</p>
