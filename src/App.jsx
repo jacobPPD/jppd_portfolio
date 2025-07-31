@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import SplitText from './SplitText'
 
 function App() {
   const [activeSection, setActiveSection] = useState('home')
@@ -8,6 +9,10 @@ function App() {
     setActiveSection(sectionId)
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
   }
+
+  const handleAnimationComplete = () => {
+    console.log('Title animation completed!');
+  };
 
   return (
     <div className="App">
@@ -58,7 +63,20 @@ function App() {
       <section id="home" className="hero">
         <div className="container">
           <div className="hero-content">
-            <h1>Hello World, I'm Jacob Papas Dennerline</h1>
+            <SplitText
+              text="Hello World, I'm Jacob Papas Dennerline"
+              className="hero-title"
+              delay={50}
+              duration={0.8}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 60 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-50px"
+              textAlign="center"
+              onLetterAnimationComplete={handleAnimationComplete}
+            />
             <h2>Full-Stack Software Engineer & Intelligent Systems Engineer</h2>
             <p>Passionate about machine learning, embedded systems, and creating innovative solutions</p>
             <div className="hero-buttons">
