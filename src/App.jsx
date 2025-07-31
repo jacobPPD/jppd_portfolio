@@ -56,17 +56,19 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="hero">
-        <div className="hero-content">
-          <h1>Hello World, I'm Jacob Papas Dennerline</h1>
-          <h2>Full-Stack Software Engineer & Intelligent Systems Engineer</h2>
-          <p>Passionate about machine learning, embedded systems, and creating innovative solutions</p>
-          <div className="hero-buttons">
-            <button onClick={() => scrollToSection('projects')} className="btn-primary">
-              View My Work
-            </button>
-            <button onClick={() => scrollToSection('contact')} className="btn-secondary">
-              Get In Touch
-            </button>
+        <div className="container">
+          <div className="hero-content">
+            <h1>Hello World, I'm Jacob Papas Dennerline</h1>
+            <h2>Full-Stack Software Engineer & Intelligent Systems Engineer</h2>
+            <p>Passionate about machine learning, embedded systems, and creating innovative solutions</p>
+            <div className="hero-buttons">
+              <button onClick={() => scrollToSection('projects')} className="btn-primary">
+                View My Work
+              </button>
+              <button onClick={() => scrollToSection('contact')} className="btn-secondary">
+                Get In Touch
+              </button>
+            </div>
           </div>
         </div>
       </section>
