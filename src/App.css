@@ -203,6 +203,79 @@ section h2 {
   font-weight: 500;
 }
 
+/* Experience Section */
+.experience {
+  background: white;
+}
+
+.experience-grid {
+  display: grid;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.experience-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #2563eb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.experience-header {
+  margin-bottom: 1.5rem;
+}
+
+.experience-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.experience-header .company {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2563eb;
+  margin-bottom: 0.25rem;
+}
+
+.experience-header .duration {
+  display: block;
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.experience-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.experience-card li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.experience-card li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #2563eb;
+  font-weight: bold;
+}
+
 /* Projects Section */
 .projects-grid {
   display: grid;
@@ -267,20 +340,19 @@ section h2 {
   font-weight: 500;
 }
 
-.project-links {
+.project-highlights {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.project-links a {
-  color: #2563eb;
-  text-decoration: none;
+.project-highlights span {
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
   font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.project-links a:hover {
-  color: #1d4ed8;
 }
 
 /* Skills Section */
@@ -443,6 +515,10 @@ section h2 {
   
   .contact-links {
     flex-direction: column;
+  }
+  
+  .experience-grid {
+    padding: 0 1rem;
   }
 }
 
