@@ -318,17 +318,44 @@ section h2 {
   max-width: 100%;
 }
 
+/* Project Cards - Make them clickable */
 .project-card {
   background: white;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-blue);
+}
+
+/* Project Pages */
+.project-page {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.project-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .project-image {
@@ -340,6 +367,39 @@ section h2 {
   color: white;
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+.project-image-large {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.project-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.project-subtitle {
+  font-size: 1.2rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.project-meta {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.9rem;
+  color: #6b7280;
 }
 
 .project-content {
@@ -388,6 +448,239 @@ section h2 {
   border-radius: 20px;
   font-size: 0.875rem;
   font-weight: 500;
+}
+
+.project-section {
+  margin-bottom: 3rem;
+}
+
+.project-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+  border-bottom: 2px solid var(--primary-blue);
+  padding-bottom: 0.5rem;
+}
+
+.project-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+/* Specs Grid */
+.specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.spec-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.spec-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.spec-item li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  color: #4b5563;
+}
+
+.spec-item li:before {
+  content: "•";
+  color: var(--primary-blue);
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.feature-card {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-blue);
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.feature-card p {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* Challenges List */
+.challenges-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.challenge-item {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #ef4444;
+}
+
+.challenge-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.challenge-item p {
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+}
+
+.challenge-item strong {
+  color: #1f2937;
+}
+
+/* ML Section */
+.ml-section h3 {
+  font-size: 1.3rem;
+  margin: 1.5rem 0 1rem 0;
+  color: #1f2937;
+}
+
+.ml-section ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.ml-section li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  color: #4b5563;
+}
+
+.ml-section li:before {
+  content: "→";
+  color: var(--primary-blue);
+  margin-right: 0.5rem;
+}
+
+/* Interface Features */
+.interface-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.feature-item {
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.feature-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.feature-item p {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/* Tech Grid */
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.tech-tag {
+  background: var(--primary-blue);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Results Grid */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.result-item {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.result-item:hover {
+  border-color: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+.result-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.result-item p {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* Project Navigation */
+.project-navigation {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  padding: 2rem;
+}
+
+.back-button {
+  background: transparent;
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.back-button:hover {
+  background: var(--primary-blue);
+  color: white;
 }
 
 /* Skills Section */
@@ -576,5 +869,39 @@ section h2 {
   
   .container {
     padding: 0 20px;
+  }
+} 
+
+/* Responsive Design for Project Pages */
+@media (max-width: 768px) {
+  .project-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .project-image-large {
+    width: 150px;
+    height: 150px;
+  }
+
+  .project-info h1 {
+    font-size: 2rem;
+  }
+
+  .specs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-container {
+    padding: 1rem;
   }
 } 

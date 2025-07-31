@@ -1,9 +1,15 @@
 import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
 import './App.css'
 import SplitText from './SplitText'
+import UAVProject from './components/UAVProject'
+import SmartSleeveProject from './components/SmartSleeveProject'
+import StockPredictionProject from './components/StockPredictionProject'
 
-function App() {
+// Main Portfolio Component
+const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home')
+  const navigate = useNavigate()
 
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId)
@@ -98,30 +104,37 @@ function App() {
               <p>
                 I'm an Accelerated Master's student at Indiana University's Luddy School of Informatics, 
                 Computing, and Engineering, specializing in Intelligent Systems Engineering with a focus on 
-                Computer Engineering. With a GPA of 3.73/4.00, I'm a Founder's Scholar with Highest Distinction.
+                Computer Engineering. With a GPA of 3.73/4.00, I'm passionate about machine learning, 
+                embedded systems, and creating innovative solutions that bridge the gap between hardware 
+                and software.
               </p>
               <p>
-                Currently working as a Full-Stack Software Engineering Intern at Allied Solutions, I develop 
-                both backend and frontend features using C# and React.js. I'm passionate about machine learning, 
-                embedded systems, and creating innovative solutions that bridge the gap between hardware and software.
+                Currently working as a Full-Stack Software Engineering Intern at Allied Solutions, 
+                I'm actively contributing to the Centerpoint platform using C# and React.js. I've 
+                delivered 10+ feature stories and collaborated with cross-functional teams to migrate 
+                legacy services into scalable cloud-native architectures.
               </p>
               <p>
-                When I'm not coding or working on projects, you can find me exploring aviation, playing board games, 
-                enjoying Greek cuisine, working with 3D printing, or listening to vinyl records.
+                When I'm not coding or studying, you can find me exploring aviation, playing board games, 
+                enjoying Greek cuisine, working on 3D printing projects, or listening to vinyl records.
               </p>
             </div>
             <div className="about-stats">
-              <div className="stat">
+              <div className="stat-item">
                 <h3>3.73</h3>
                 <p>GPA</p>
               </div>
-              <div className="stat">
-                <h3>5+</h3>
-                <p>Major Projects</p>
+              <div className="stat-item">
+                <h3>10+</h3>
+                <p>Features Delivered</p>
               </div>
-              <div className="stat">
+              <div className="stat-item">
                 <h3>200+</h3>
                 <p>Students Mentored</p>
+              </div>
+              <div className="stat-item">
+                <h3>3</h3>
+                <p>Languages</p>
               </div>
             </div>
           </div>
@@ -142,11 +155,10 @@ function App() {
               <ul>
                 <li>Developing Backend and Frontend features for the Centerpoint platform using C# and React.js</li>
                 <li>Actively contributing to 5 sprint releases and delivering 10 feature stories with full testing and deployment support</li>
-                <li>Collaborating cross-functionally with Engineering and AI development teams to migrate legacy services into scalable .NET Core 8.0 architectures</li>
+                <li>Collaborating cross-functionally with Engineering and AI development teams to migrate legacy services</li>
                 <li>Delivering interdepartmental intern capstone project to a department of 200 engineers</li>
               </ul>
             </div>
-
             <div className="experience-card">
               <div className="experience-header">
                 <h3>Assistant Instructor</h3>
@@ -169,7 +181,7 @@ function App() {
         <div className="container">
           <h2>Featured Projects</h2>
           <div className="projects-grid">
-            <div className="project-card">
+            <div className="project-card" onClick={() => navigate('/project/uav')}>
               <div className="project-image">
                 <div className="project-placeholder">UAV</div>
               </div>
@@ -190,7 +202,7 @@ function App() {
               </div>
             </div>
 
-            <div className="project-card">
+            <div className="project-card" onClick={() => navigate('/project/smart-sleeve')}>
               <div className="project-image">
                 <div className="project-placeholder">Smart Sleeve</div>
               </div>
@@ -212,7 +224,7 @@ function App() {
               </div>
             </div>
 
-            <div className="project-card">
+            <div className="project-card" onClick={() => navigate('/project/stock-prediction')}>
               <div className="project-image">
                 <div className="project-placeholder">Stock Prediction</div>
               </div>
@@ -323,6 +335,20 @@ function App() {
         </div>
       </footer>
     </div>
+  )
+}
+
+// Main App Component with Router
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Portfolio />} />
+        <Route path="/project/uav" element={<UAVProject />} />
+        <Route path="/project/smart-sleeve" element={<SmartSleeveProject />} />
+        <Route path="/project/stock-prediction" element={<StockPredictionProject />} />
+      </Routes>
+    </Router>
   )
 }
 
