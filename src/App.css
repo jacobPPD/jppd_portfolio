@@ -94,12 +94,15 @@ body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   text-align: center;
-  padding: 0 2rem;
+  padding: 0;
+  width: 100%;
 }
 
 .hero-content {
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0 2rem;
+  box-sizing: border-box;
 }
 
 .hero-title {
@@ -126,9 +129,7 @@ body {
   margin-bottom: 2.5rem;
   opacity: 0.8;
   animation: fadeInUp 1s ease 0.4s both;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
 }
 
 .hero-buttons {
