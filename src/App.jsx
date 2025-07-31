@@ -61,32 +61,30 @@ function App() {
 
       {/* Hero Section */}
       <section id="home" className="hero">
-        <div className="container">
-          <div className="hero-content">
-            <SplitText
-              text="Hello World, I'm Jacob Papas Dennerline"
-              className="hero-title"
-              delay={50}
-              duration={0.8}
-              ease="power3.out"
-              splitType="chars"
-              from={{ opacity: 0, y: 60 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-50px"
-              textAlign="center"
-              onLetterAnimationComplete={handleAnimationComplete}
-            />
-            <h2>Full-Stack Software Engineer & Intelligent Systems Engineer</h2>
-            <p>Passionate about machine learning, embedded systems, and creating innovative solutions</p>
-            <div className="hero-buttons">
-              <button onClick={() => scrollToSection('projects')} className="btn-primary">
-                View My Work
-              </button>
-              <button onClick={() => scrollToSection('contact')} className="btn-secondary">
-                Get In Touch
-              </button>
-            </div>
+        <div className="hero-content">
+          <SplitText
+            text="Hello World, I'm Jacob Papas Dennerline"
+            className="hero-title"
+            delay={50}
+            duration={0.8}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 60 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-50px"
+            textAlign="center"
+            onLetterAnimationComplete={handleAnimationComplete}
+          />
+          <h2>Full-Stack Software Engineer & Intelligent Systems Engineer</h2>
+          <p>Passionate about machine learning, embedded systems, and creating innovative solutions</p>
+          <div className="hero-buttons">
+            <button onClick={() => scrollToSection('projects')} className="btn-primary">
+              View My Work
+            </button>
+            <button onClick={() => scrollToSection('contact')} className="btn-secondary">
+              Get In Touch
+            </button>
           </div>
         </div>
       </section>
