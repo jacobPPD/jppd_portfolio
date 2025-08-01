@@ -1,5 +1,5 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, Link } from 'react-router-dom'
 import './App.css'
 import SplitText from './SplitText'
 import ScrollFloat from './ScrollFloat'
@@ -342,19 +342,13 @@ function App() {
                         <span>Real-time control system</span>
                       </div>
                       <div className="project-actions">
-                        <a 
-                          href="/uav" 
+                        <Link 
+                          to="/uav" 
                           className="btn-primary"
                           aria-label="View detailed information about the UAV project"
-                          onKeyDown={(e) => {
-                            if (e.key === 'Enter' || e.key === ' ') {
-                              e.preventDefault();
-                              window.location.href = '/uav';
-                            }
-                          }}
                         >
                           View Details
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -379,19 +373,13 @@ function App() {
                         <span>Real-time fatigue detection</span>
                       </div>
                       <div className="project-actions">
-                        <a 
-                          href="/smart-sleeve" 
+                        <Link 
+                          to="/smart-sleeve" 
                           className="btn-primary"
                           aria-label="View detailed information about the Smart Sleeve project"
-                          onKeyDown={(e) => {
-                            if (e.key === 'Enter' || e.key === ' ') {
-                              e.preventDefault();
-                              window.location.href = '/smart-sleeve';
-                            }
-                          }}
                         >
                           View Details
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -415,19 +403,13 @@ function App() {
                         <span>Real-time data analysis</span>
                       </div>
                       <div className="project-actions">
-                        <a 
-                          href="/stock-prediction" 
+                        <Link 
+                          to="/stock-prediction" 
                           className="btn-primary"
                           aria-label="View detailed information about the Stock Prediction project"
-                          onKeyDown={(e) => {
-                            if (e.key === 'Enter' || e.key === ' ') {
-                              e.preventDefault();
-                              window.location.href = '/stock-prediction';
-                            }
-                          }}
                         >
                           View Details
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -575,6 +557,10 @@ function App() {
                     />
                     <span>Visual Studio</span>
                   </div>
+                </div>
+                
+                {/* Centered last row */}
+                <div className="skills-last-row">
                   <div className="skill-box">
                     <img 
                       src="./logos/Postman.png" 
