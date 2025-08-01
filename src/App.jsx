@@ -428,7 +428,7 @@ function App() {
                 <div className="skills-grid">
                   <div className="skill-box">
                     <img 
-                      src="/logos/Cpp.png" 
+                      src="./logos/Cpp.png" 
                       alt="C++" 
                       onError={handleImageError}
                       onLoad={handleImageLoad}
@@ -437,7 +437,7 @@ function App() {
                   </div>
                   <div className="skill-box">
                     <img 
-                      src="/logos/C.png" 
+                      src="./logos/C.png" 
                       alt="C" 
                       onError={handleImageError}
                       onLoad={handleImageLoad}
@@ -446,7 +446,7 @@ function App() {
                   </div>
                   <div className="skill-box">
                     <img 
-                      src="/logos/Csharp.png" 
+                      src="./logos/Csharp.png" 
                       alt="C#" 
                       onError={handleImageError}
                       onLoad={handleImageLoad}
@@ -455,7 +455,7 @@ function App() {
                   </div>
                   <div className="skill-box">
                     <img 
-                      src="/logos/Python.png" 
+                      src="./logos/Python.png" 
                       alt="Python" 
                       onError={handleImageError}
                       onLoad={handleImageLoad}
@@ -464,7 +464,7 @@ function App() {
                   </div>
                   <div className="skill-box">
                     <img 
-                      src="/logos/SQL.png" 
+                      src="./logos/SQL.png" 
                       alt="SQL" 
                       onError={handleImageError}
                       onLoad={handleImageLoad}
@@ -473,7 +473,7 @@ function App() {
                   </div>
                   <div className="skill-box">
                     <img 
-                      src="/logos/MATLAB.png" 
+                      src="./logos/MATLAB.png" 
                       alt="MATLAB" 
                       onError={handleImageError}
                       onLoad={handleImageLoad}
@@ -482,7 +482,7 @@ function App() {
                   </div>
                   <div className="skill-box">
                     <img 
-                      src="/logos/react.png" 
+                      src="./logos/react.png" 
                       alt="React" 
                       onError={handleImageError}
                       onLoad={handleImageLoad}
@@ -491,7 +491,7 @@ function App() {
                   </div>
                   <div className="skill-box">
                     <img 
-                      src="/logos/AWS.png" 
+                      src="./logos/AWS.png" 
                       alt="AWS" 
                       onError={handleImageError}
                       onLoad={handleImageLoad}
@@ -500,7 +500,7 @@ function App() {
                   </div>
                   <div className="skill-box">
                     <img 
-                      src="/logos/Docker.png" 
+                      src="./logos/Docker.png" 
                       alt="Docker" 
                       onError={handleImageError}
                       onLoad={handleImageLoad}
@@ -509,7 +509,7 @@ function App() {
                   </div>
                   <div className="skill-box">
                     <img 
-                      src="/logos/GitHub.png" 
+                      src="./logos/GitHub.png" 
                       alt="GitHub" 
                       onError={handleImageError}
                       onLoad={handleImageLoad}
@@ -518,7 +518,7 @@ function App() {
                   </div>
                   <div className="skill-box">
                     <img 
-                      src="/logos/API.png" 
+                      src="./logos/API.png" 
                       alt="API Development" 
                       onError={handleImageError}
                       onLoad={handleImageLoad}
@@ -527,7 +527,7 @@ function App() {
                   </div>
                   <div className="skill-box">
                     <img 
-                      src="/logos/MachineLearning.png" 
+                      src="./logos/MachineLearning.png" 
                       alt="Machine Learning" 
                       onError={handleImageError}
                       onLoad={handleImageLoad}
@@ -536,7 +536,7 @@ function App() {
                   </div>
                   <div className="skill-box">
                     <img 
-                      src="/logos/SolidWorks.png" 
+                      src="./logos/SolidWorks.png" 
                       alt="SolidWorks" 
                       onError={handleImageError}
                       onLoad={handleImageLoad}
@@ -545,7 +545,7 @@ function App() {
                   </div>
                   <div className="skill-box">
                     <img 
-                      src="/logos/Fusion.png" 
+                      src="./logos/Fusion.png" 
                       alt="Fusion360" 
                       onError={handleImageError}
                       onLoad={handleImageLoad}
@@ -554,7 +554,7 @@ function App() {
                   </div>
                   <div className="skill-box">
                     <img 
-                      src="/logos/VS.png" 
+                      src="./logos/VS.png" 
                       alt="Visual Studio" 
                       onError={handleImageError}
                       onLoad={handleImageLoad}
@@ -563,7 +563,7 @@ function App() {
                   </div>
                   <div className="skill-box">
                     <img 
-                      src="/logos/Postman.png" 
+                      src="./logos/Postman.png" 
                       alt="Postman" 
                       onError={handleImageError}
                       onLoad={handleImageLoad}
@@ -572,7 +572,7 @@ function App() {
                   </div>
                   <div className="skill-box">
                     <img 
-                      src="/logos/Excel.png" 
+                      src="./logos/Excel.png" 
                       alt="Excel" 
                       onError={handleImageError}
                       onLoad={handleImageLoad}
