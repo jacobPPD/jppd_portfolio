@@ -1258,7 +1258,6 @@ section h2 {
   position: relative;
   z-index: 1;
   /* filter: brightness(1) contrast(1.1); */
-  border: 2px solid red; /* Temporary for debugging */
 }
 
 .skill-box:hover img {
