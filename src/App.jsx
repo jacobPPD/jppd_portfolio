@@ -4,6 +4,7 @@ import './App.css'
 import SplitText from './SplitText'
 import ScrollFloat from './ScrollFloat'
 import Magnet from './Magnet'
+import GlassIcons from './GlassIcons'
 
 // Lazy load project components for better performance
 const UAVProject = lazy(() => import('./components/UAVProject'))
@@ -203,7 +204,7 @@ function App() {
                     ease='back.inOut(2)'
                     scrollStart='top bottom+=20%'
                     scrollEnd='top center'
-                    stagger={0.01}
+                    stagger={0.03}
                     containerClassName="hero-title-line"
                     textClassName="hero-title-text"
                   >
@@ -215,7 +216,7 @@ function App() {
                     ease='back.inOut(2)'
                     scrollStart='top bottom+=10%'
                     scrollEnd='top center'
-                    stagger={0.01}
+                    stagger={0.03}
                     containerClassName="hero-subtitle-line"
                     textClassName="hero-subtitle-text"
                   >
@@ -423,164 +424,36 @@ function App() {
             <section id="skills" className="skills">
               <div className="container">
                 <h2>Professional Skillset</h2>
-                <div className="skills-grid">
-                  <div className="skill-box">
-                    <img 
-                      src="./logos/Cpp.png" 
-                      alt="C++" 
-                      onError={handleImageError}
-                      onLoad={handleImageLoad}
-                    />
-                    <span>C++</span>
-                  </div>
-                  <div className="skill-box">
-                    <img 
-                      src="./logos/C.png" 
-                      alt="C" 
-                      onError={handleImageError}
-                      onLoad={handleImageLoad}
-                    />
-                    <span>C</span>
-                  </div>
-                  <div className="skill-box">
-                    <img 
-                      src="./logos/Csharp.png" 
-                      alt="C#" 
-                      onError={handleImageError}
-                      onLoad={handleImageLoad}
-                    />
-                    <span>C#</span>
-                  </div>
-                  <div className="skill-box">
-                    <img 
-                      src="./logos/Python.png" 
-                      alt="Python" 
-                      onError={handleImageError}
-                      onLoad={handleImageLoad}
-                    />
-                    <span>Python</span>
-                  </div>
-                  <div className="skill-box">
-                    <img 
-                      src="./logos/SQL.png" 
-                      alt="SQL" 
-                      onError={handleImageError}
-                      onLoad={handleImageLoad}
-                    />
-                    <span>SQL</span>
-                  </div>
-                  <div className="skill-box">
-                    <img 
-                      src="./logos/MATLAB.png" 
-                      alt="MATLAB" 
-                      onError={handleImageError}
-                      onLoad={handleImageLoad}
-                    />
-                    <span>MATLAB</span>
-                  </div>
-                  <div className="skill-box">
-                    <img 
-                      src="./logos/react.png" 
-                      alt="React" 
-                      onError={handleImageError}
-                      onLoad={handleImageLoad}
-                    />
-                    <span>React</span>
-                  </div>
-                  <div className="skill-box">
-                    <img 
-                      src="./logos/AWS.png" 
-                      alt="AWS" 
-                      onError={handleImageError}
-                      onLoad={handleImageLoad}
-                    />
-                    <span>AWS</span>
-                  </div>
-                  <div className="skill-box">
-                    <img 
-                      src="./logos/Docker.png" 
-                      alt="Docker" 
-                      onError={handleImageError}
-                      onLoad={handleImageLoad}
-                    />
-                    <span>Docker</span>
-                  </div>
-                  <div className="skill-box">
-                    <img 
-                      src="./logos/GitHub.png" 
-                      alt="GitHub" 
-                      onError={handleImageError}
-                      onLoad={handleImageLoad}
-                    />
-                    <span>GitHub</span>
-                  </div>
-                  <div className="skill-box">
-                    <img 
-                      src="./logos/API.png" 
-                      alt="API Development" 
-                      onError={handleImageError}
-                      onLoad={handleImageLoad}
-                    />
-                    <span>API Development</span>
-                  </div>
-                  <div className="skill-box">
-                    <img 
-                      src="./logos/MachineLearning.png" 
-                      alt="Machine Learning" 
-                      onError={handleImageError}
-                      onLoad={handleImageLoad}
-                    />
-                    <span>Machine Learning</span>
-                  </div>
-                  <div className="skill-box">
-                    <img 
-                      src="./logos/SolidWorks.png" 
-                      alt="SolidWorks" 
-                      onError={handleImageError}
-                      onLoad={handleImageLoad}
-                    />
-                    <span>SolidWorks</span>
-                  </div>
-                  <div className="skill-box">
-                    <img 
-                      src="./logos/Fusion.png" 
-                      alt="Fusion360" 
-                      onError={handleImageError}
-                      onLoad={handleImageLoad}
-                    />
-                    <span>Fusion360</span>
-                  </div>
-                  <div className="skill-box">
-                    <img 
-                      src="./logos/VS.png" 
-                      alt="Visual Studio" 
-                      onError={handleImageError}
-                      onLoad={handleImageLoad}
-                    />
-                    <span>Visual Studio</span>
-                  </div>
-                </div>
+                <GlassIcons 
+                  items={[
+                    { icon: <img src="./logos/Cpp.png" alt="C++" onError={handleImageError} onLoad={handleImageLoad} />, color: 'blue', label: 'C++' },
+                    { icon: <img src="./logos/C.png" alt="C" onError={handleImageError} onLoad={handleImageLoad} />, color: 'indigo', label: 'C' },
+                    { icon: <img src="./logos/Csharp.png" alt="C#" onError={handleImageError} onLoad={handleImageLoad} />, color: 'purple', label: 'C#' },
+                    { icon: <img src="./logos/Python.png" alt="Python" onError={handleImageError} onLoad={handleImageLoad} />, color: 'green', label: 'Python' },
+                    { icon: <img src="./logos/SQL.png" alt="SQL" onError={handleImageError} onLoad={handleImageLoad} />, color: 'teal', label: 'SQL' },
+                    { icon: <img src="./logos/MATLAB.png" alt="MATLAB" onError={handleImageError} onLoad={handleImageLoad} />, color: 'orange', label: 'MATLAB' },
+                    { icon: <img src="./logos/react.png" alt="React" onError={handleImageError} onLoad={handleImageLoad} />, color: 'cyan', label: 'React' },
+                    { icon: <img src="./logos/AWS.png" alt="AWS" onError={handleImageError} onLoad={handleImageLoad} />, color: 'amber', label: 'AWS' },
+                    { icon: <img src="./logos/Docker.png" alt="Docker" onError={handleImageError} onLoad={handleImageLoad} />, color: 'blue', label: 'Docker' },
+                    { icon: <img src="./logos/GitHub.png" alt="GitHub" onError={handleImageError} onLoad={handleImageLoad} />, color: 'emerald', label: 'GitHub' },
+                    { icon: <img src="./logos/API.png" alt="API Development" onError={handleImageError} onLoad={handleImageLoad} />, color: 'violet', label: 'API Development' },
+                    { icon: <img src="./logos/MachineLearning.png" alt="Machine Learning" onError={handleImageError} onLoad={handleImageLoad} />, color: 'rose', label: 'Machine Learning' },
+                    { icon: <img src="./logos/SolidWorks.png" alt="SolidWorks" onError={handleImageError} onLoad={handleImageLoad} />, color: 'sky', label: 'SolidWorks' },
+                    { icon: <img src="./logos/Fusion.png" alt="Fusion360" onError={handleImageError} onLoad={handleImageLoad} />, color: 'fuchsia', label: 'Fusion360' },
+                    { icon: <img src="./logos/VS.png" alt="Visual Studio" onError={handleImageError} onLoad={handleImageLoad} />, color: 'lime', label: 'Visual Studio' }
+                  ]}
+                  className="skills-glass-icons"
+                />
                 
                 {/* Centered last row */}
                 <div className="skills-last-row">
-                  <div className="skill-box">
-                    <img 
-                      src="./logos/Postman.png" 
-                      alt="Postman" 
-                      onError={handleImageError}
-                      onLoad={handleImageLoad}
-                    />
-                    <span>Postman</span>
-                  </div>
-                  <div className="skill-box">
-                    <img 
-                      src="./logos/Excel.png" 
-                      alt="Excel" 
-                      onError={handleImageError}
-                      onLoad={handleImageLoad}
-                    />
-                    <span>Excel</span>
-                  </div>
+                  <GlassIcons 
+                    items={[
+                      { icon: <img src="./logos/Postman.png" alt="Postman" onError={handleImageError} onLoad={handleImageLoad} />, color: 'orange', label: 'Postman' },
+                      { icon: <img src="./logos/Excel.png" alt="Excel" onError={handleImageError} onLoad={handleImageLoad} />, color: 'green', label: 'Excel' }
+                    ]}
+                    className="skills-glass-icons-last-row"
+                  />
                 </div>
               </div>
             </section>

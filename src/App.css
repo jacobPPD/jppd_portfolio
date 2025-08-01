@@ -95,6 +95,20 @@
   box-sizing: border-box;
 }
 
+/* Ensure consistent rendering across environments */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   line-height: 1.6;
@@ -1598,6 +1612,9 @@ section h2 {
   display: flex;
   align-items: flex-start;
   position: relative;
+  font-size: 16px; /* Ensure consistent base font size */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .hero-content {
@@ -1646,7 +1663,7 @@ section h2 {
   font-size: clamp(8rem, 24vw, 16rem) !important;
   font-weight: 900 !important;
   color: #ffffff !important;
-  line-height: 0.9 !important;
+  line-height: 1.1 !important;
   text-align: left !important;
   letter-spacing: 0.02em !important;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
@@ -1656,6 +1673,7 @@ section h2 {
   text-rendering: optimizeLegibility;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 .hero .char {
