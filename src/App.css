@@ -120,7 +120,7 @@ html {
 
 /* Ensure consistent rendering across environments */
 html {
-  font-size: 16px;
+  font-size: 12.8px; /* 80% of 16px */
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -131,7 +131,7 @@ html {
 }
 
 body {
-  font-size: 16px;
+  font-size: 12.8px; /* 80% of 16px */
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1638,11 +1638,11 @@ section h2 {
 
 /* Hero section layout for full-page design */
 .hero {
-  min-height: 200vh; /* Double height for more scroll space */
+  min-height: 160vh; /* 80% of 200vh */
   display: flex;
   align-items: flex-start;
   position: relative;
-  font-size: 16px; /* Ensure consistent base font size */
+  font-size: 12.8px; /* 80% of 16px */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-synthesis: none;
@@ -1653,12 +1653,12 @@ section h2 {
   width: 100%;
   max-width: none;
   margin: 0;
-  padding: 0 4rem;
+  padding: 0 3.2rem; /* 80% of 4rem */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-height: 200vh;
-  padding-top: 20vh; /* Start content 20% from top */
+  min-height: 160vh; /* 80% of 200vh */
+  padding-top: 16vh; /* 80% of 20vh */
 }
 
 .hero-text-container {
@@ -1667,14 +1667,14 @@ section h2 {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 2rem;
-  min-height: 200vh; /* Double the viewport height for more scroll space */
+  margin-bottom: 1.6rem; /* 80% of 2rem */
+  min-height: 160vh; /* 80% of 200vh */
   width: 100%;
   padding-left: 0;
 }
 
 .hero-spacer {
-  height: 80vh; /* Reduced height for earlier text appearance */
+  height: 64vh; /* 80% of 80vh */
   width: 100%;
 }
 
@@ -1692,13 +1692,13 @@ section h2 {
 }
 
 .hero .scroll-float-text {
-  font-size: clamp(6rem, 18vw, 12rem) !important;
+  font-size: clamp(4.8rem, 14.4vw, 9.6rem) !important; /* 80% of previous values */
   font-weight: 900 !important;
   color: #ffffff !important;
   line-height: 1.1 !important;
   text-align: left !important;
   letter-spacing: 0.02em !important;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 3.2px 6.4px rgba(0, 0, 0, 0.4); /* 80% of shadow */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-synthesis: none;
@@ -1722,13 +1722,13 @@ section h2 {
 }
 
 .hero .hero-subtitle-text {
-  font-size: clamp(1.25rem, 3vw, 2rem) !important;
+  font-size: clamp(1rem, 2.4vw, 1.6rem) !important; /* 80% of previous values */
   font-weight: 600 !important;
   color: #8b5cf6 !important; /* Purple color */
   line-height: 1.2 !important;
   text-align: left !important;
   letter-spacing: 0.01em !important;
-  text-shadow: 0 2px 4px rgba(139, 92, 246, 0.3);
+  text-shadow: 0 1.6px 3.2px rgba(139, 92, 246, 0.3); /* 80% of shadow */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-synthesis: none;
@@ -1742,8 +1742,8 @@ section h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4rem;
-  margin-top: 3rem;
+  gap: 3.2rem; /* 80% of 4rem */
+  margin-top: 2.4rem; /* 80% of 3rem */
   width: 100%;
 }
 
@@ -1751,17 +1751,17 @@ section h2 {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
-  padding: 1.5rem 3rem;
-  font-size: clamp(1.25rem, 3vw, 2rem);
+  padding: 1.2rem 2.4rem; /* 80% of previous values */
+  font-size: clamp(1rem, 2.4vw, 1.6rem); /* 80% of previous values */
   font-weight: 700;
-  border-radius: 16px;
+  border-radius: 12.8px; /* 80% of 16px */
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 6.4px 25.6px rgba(102, 126, 234, 0.3); /* 80% of shadow */
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  min-width: 300px;
-  min-height: 80px;
+  min-width: 240px; /* 80% of 300px */
+  min-height: 64px; /* 80% of 80px */
 }
 
 .magnet-btn-primary:hover {
@@ -1772,18 +1772,18 @@ section h2 {
 .magnet-btn-secondary {
   background: rgba(255, 255, 255, 0.1);
   color: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  padding: 1.5rem 3rem;
-  font-size: clamp(1.25rem, 3vw, 2rem);
+  border: 1.6px solid rgba(255, 255, 255, 0.3); /* 80% of 2px */
+  padding: 1.2rem 2.4rem; /* 80% of previous values */
+  font-size: clamp(1rem, 2.4vw, 1.6rem); /* 80% of previous values */
   font-weight: 700;
-  border-radius: 16px;
+  border-radius: 12.8px; /* 80% of 16px */
   cursor: pointer;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px); /* 80% of 10px */
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  min-width: 300px;
-  min-height: 80px;
+  min-width: 240px; /* 80% of 300px */
+  min-height: 64px; /* 80% of 80px */
 }
 
 .magnet-btn-secondary:hover {
