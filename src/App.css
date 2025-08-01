@@ -1625,7 +1625,7 @@ section h2 {
 }
 
 .hero-spacer {
-  height: 120vh; /* Slightly less than full viewport for better timing */
+  height: 80vh; /* Reduced height for earlier text appearance */
   width: 100%;
 }
 
@@ -1687,19 +1687,74 @@ section h2 {
   overflow-wrap: break-word;
 }
 
-/* Hero info styling */
-.hero-info h2 {
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 1rem;
-  font-weight: 600;
+/* Hero magnet buttons styling */
+.hero-magnet-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  margin-top: 3rem;
+  width: 100%;
 }
 
-.hero-info p {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 2rem;
-  line-height: 1.6;
+.magnet-btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 2rem 4rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  min-width: 300px;
+  min-height: 80px;
+}
+
+.magnet-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.4);
+}
+
+.magnet-btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 2rem 4rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  min-width: 300px;
+  min-height: 80px;
+}
+
+.magnet-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments for magnet buttons */
+@media (max-width: 768px) {
+  .hero-magnet-buttons {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .magnet-btn-primary,
+  .magnet-btn-secondary {
+    min-width: 280px;
+    padding: 1.5rem 3rem;
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+  }
 }
 
 /* Responsive adjustments */

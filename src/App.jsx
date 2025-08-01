@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, Link } from 'react-router-dom'
 import './App.css'
 import SplitText from './SplitText'
 import ScrollFloat from './ScrollFloat'
+import Magnet from './Magnet'
 
 // Lazy load project components for better performance
 const UAVProject = lazy(() => import('./components/UAVProject'))
@@ -200,9 +201,9 @@ function App() {
                   <ScrollFloat
                     animationDuration={1.2}
                     ease='back.inOut(2)'
-                    scrollStart='top bottom'
-                    scrollEnd='center center'
-                    stagger={0.04}
+                    scrollStart='top bottom+=20%'
+                    scrollEnd='top center'
+                    stagger={0.01}
                     containerClassName="hero-title-line"
                     textClassName="hero-title-text"
                   >
@@ -212,9 +213,9 @@ function App() {
                   <ScrollFloat
                     animationDuration={1.4}
                     ease='back.inOut(2)'
-                    scrollStart='top bottom'
-                    scrollEnd='center center'
-                    stagger={0.05}
+                    scrollStart='top bottom+=10%'
+                    scrollEnd='top center'
+                    stagger={0.01}
                     containerClassName="hero-subtitle-line"
                     textClassName="hero-subtitle-text"
                   >
@@ -222,17 +223,18 @@ function App() {
                   </ScrollFloat>
                 </div>
                 
-                <div className="hero-info">
-                  <h2>Full-Stack Software Engineer & Intelligent Systems Engineer</h2>
-                  <p>Passionate about machine learning, embedded systems, and creating innovative solutions</p>
-                  <div className="hero-buttons">
-                    <button onClick={() => scrollToSection('projects')} className="btn-primary">
+                <div className="hero-magnet-buttons">
+                  <Magnet padding={100} disabled={false} magnetStrength={20}>
+                    <button onClick={() => scrollToSection('projects')} className="magnet-btn-primary">
                       View My Work
                     </button>
-                    <button onClick={() => scrollToSection('contact')} className="btn-secondary">
+                  </Magnet>
+                  
+                  <Magnet padding={100} disabled={false} magnetStrength={20}>
+                    <button onClick={() => scrollToSection('contact')} className="magnet-btn-secondary">
                       Get In Touch
                     </button>
-                  </div>
+                  </Magnet>
                 </div>
               </div>
             </section>
