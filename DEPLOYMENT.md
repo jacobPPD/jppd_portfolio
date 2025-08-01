@@ -1,79 +1,154 @@
-# GitHub Pages Deployment Guide
+# Deployment Guide - Jacob's Portfolio
 
-## Quick Setup
+This guide explains how to deploy this React portfolio website to GitHub Pages.
 
-### 1. Create GitHub Repository
+## 🚀 Quick Deployment
 
-1. Go to [GitHub](https://github.com) and create a new repository
-2. Name it `jppd_portfolio` (or whatever you prefer)
-3. Make it public (required for free GitHub Pages)
-4. Don't initialize with README (we already have one)
+### Prerequisites
+- GitHub account
+- Node.js installed on your computer
+- Git installed on your computer
 
-### 2. Update Configuration
+### Step 1: Fork or Clone the Repository
 
-1. **Update `package.json`** - Replace `yourusername` with your actual GitHub username:
-```json
-"homepage": "https://yourusername.github.io/jppd_portfolio"
+**Option A: Fork (Recommended for customization)**
+1. Go to [https://github.com/jacobPPD/jppd_portfolio](https://github.com/jacobPPD/jppd_portfolio)
+2. Click the "Fork" button in the top right
+3. Clone your forked repository:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/jppd_portfolio.git
+   cd jppd_portfolio
+   ```
+
+**Option B: Clone (For reference/learning)**
+```bash
+git clone https://github.com/jacobPPD/jppd_portfolio.git
+cd jppd_portfolio
 ```
 
-2. **Update `src/App.jsx`** - Replace placeholder content:
-   - Replace `[Your Name]` with your actual name
-   - Update project descriptions and links
-   - Update contact information
-
-### 3. Push to GitHub
+### Step 2: Install Dependencies
 
 ```bash
-# Initialize git (if not already done)
-git init
-
-# Add all files
-git add .
-
-# Commit changes
-git commit -m "Initial portfolio setup"
-
-# Add your GitHub repository as remote
-git remote add origin https://github.com/yourusername/jppd_portfolio.git
-
-# Push to GitHub
-git push -u origin main
+npm install
 ```
 
-### 4. Deploy to GitHub Pages
+### Step 3: Customize the Portfolio
+
+1. **Update Personal Information**
+   - Edit `src/App.jsx` to change your name, title, and contact info
+   - Update the projects section with your own work
+   - Modify the skills and experience sections
+
+2. **Update Repository URL**
+   - Edit `package.json`
+   - Change the `homepage` field to your GitHub Pages URL:
+   ```json
+   "homepage": "https://YOUR_USERNAME.github.io/jppd_portfolio"
+   ```
+
+### Step 4: Test Locally
 
 ```bash
-# Deploy the build to GitHub Pages
+npm run dev
+```
+
+Open `http://localhost:5173` to see your portfolio.
+
+### Step 5: Deploy to GitHub Pages
+
+```bash
 npm run deploy
 ```
 
-### 5. Enable GitHub Pages
+This command will:
+- Build your React app
+- Create optimized files in the `dist` folder
+- Push the files to a `gh-pages` branch
+- Make your site live on GitHub Pages
+
+### Step 6: Enable GitHub Pages
 
 1. Go to your repository on GitHub
 2. Click **Settings** tab
-3. Scroll down to **Pages** section
+3. Scroll down to **Pages** section (in the left sidebar)
 4. Under **Source**, select **Deploy from a branch**
 5. Choose **gh-pages** branch
 6. Click **Save**
 
-### 6. Your Site is Live!
+### Step 7: Your Site is Live!
 
 Your portfolio will be available at:
-`https://yourusername.github.io/jppd_portfolio`
+`https://YOUR_USERNAME.github.io/jppd_portfolio`
 
-## Custom Domain (Optional)
+## 🔧 Advanced Customization
 
-If you want to use a custom domain:
+### Adding Your Own Projects
 
-1. Buy a domain (e.g., from Namecheap, GoDaddy, etc.)
-2. Add a file named `CNAME` in the `public` folder with your domain:
-   ```
-   yourdomain.com
-   ```
-3. Configure DNS settings with your domain provider
-4. Deploy again: `npm run deploy`
+Edit the projects section in `src/App.jsx`:
 
-## Troubleshooting
+```jsx
+<div className="project-card">
+  <div className="project-image">
+    <div className="project-placeholder">Your Project</div>
+  </div>
+  <div className="project-content">
+    <h3>Your Project Name</h3>
+    <p>Description of your project...</p>
+    <div className="project-tech">
+      <span>React</span>
+      <span>Node.js</span>
+    </div>
+  </div>
+</div>
+```
+
+### Changing Colors
+
+Edit the CSS variables in `src/App.css`:
+
+```css
+/* Primary colors */
+--primary-blue: #2563eb;
+--gradient-start: #667eea;
+--gradient-end: #764ba2;
+```
+
+### Adding New Sections
+
+1. Add new section to `src/App.jsx`
+2. Add corresponding styles to `src/App.css`
+3. Update navigation if needed
+
+## 📱 Mobile Optimization
+
+The portfolio is fully responsive and includes:
+- Mobile-first design
+- Touch-friendly navigation
+- Optimized typography for small screens
+- Proper spacing on all devices
+
+## 🚀 Performance Tips
+
+- Images are automatically optimized by Vite
+- CSS is minified in production
+- Consider using WebP images for better compression
+- The site loads in under 2 seconds on most connections
+
+## 🔄 Updating Your Site
+
+After making changes:
+
+```bash
+# Commit your changes
+git add .
+git commit -m "Update portfolio content"
+git push
+
+# Deploy the new version
+npm run deploy
+```
+
+## 🐛 Troubleshooting
 
 ### Common Issues
 
@@ -82,35 +157,20 @@ If you want to use a custom domain:
 3. **Styling Issues**: Clear browser cache or try incognito mode
 4. **Images Not Loading**: Make sure image paths are correct
 
-### Updating Your Site
+### Getting Help
 
-After making changes:
+If you encounter issues:
+1. Check the browser console for errors
+2. Verify all dependencies are installed
+3. Make sure your GitHub Pages is enabled
+4. Check that the `gh-pages` branch exists
 
-```bash
-# Commit your changes
-git add .
-git commit -m "Update portfolio"
-git push
+## 📞 Support
 
-# Deploy the new version
-npm run deploy
-```
-
-## Performance Tips
-
-1. **Optimize Images**: Use WebP format and compress images
-2. **Lazy Loading**: Consider implementing lazy loading for images
-3. **Minimize Dependencies**: Only include necessary packages
-4. **CDN**: GitHub Pages serves from CDN for fast loading
-
-## Analytics (Optional)
-
-To track visitors:
-
-1. Create a Google Analytics account
-2. Add the tracking code to `public/index.html`
-3. Deploy: `npm run deploy`
+For questions about this portfolio template:
+- **Email:** jpapasd@iu.edu
+- **GitHub Issues:** [Create an issue](https://github.com/jacobPPD/jppd_portfolio/issues)
 
 ---
 
-**Your portfolio is now ready to showcase your work! 🚀** 
+**Happy deploying! 🚀** 

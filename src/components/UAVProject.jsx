@@ -10,7 +10,17 @@ const UAVProject = () => {
       <nav className="navbar">
         <div className="nav-brand">JPPD</div>
         <div className="nav-links">
-          <button onClick={() => navigate('/')} className="back-button">
+          <button 
+            onClick={() => navigate('/')} 
+            className="back-button"
+            aria-label="Return to main portfolio"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                navigate('/');
+              }
+            }}
+          >
             ← Back to Portfolio
           </button>
         </div>
@@ -149,7 +159,17 @@ const UAVProject = () => {
         </div>
 
         <div className="project-navigation">
-          <button onClick={() => navigate('/')} className="btn-secondary">
+          <button 
+            onClick={() => navigate('/')} 
+            className="btn-secondary"
+            aria-label="Return to main portfolio"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                navigate('/');
+              }
+            }}
+          >
             ← Back to Portfolio
           </button>
         </div>

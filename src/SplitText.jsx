@@ -22,6 +22,8 @@ const SplitText = ({
   const ref = useRef(null);
   const animationCompletedRef = useRef(false);
   const scrollTriggerRef = useRef(null);
+  const splitterRef = useRef(null);
+  const targetsRef = useRef(null);
 
   useEffect(() => {
     if (typeof window === "undefined" || !ref.current || !text) return;
@@ -40,8 +42,10 @@ const SplitText = ({
         absolute: absoluteLines,
         linesClass: "split-line",
       });
+      splitterRef.current = splitter;
     } catch (error) {
       console.error("Failed to create SplitText:", error);
+      // Fallback: render text normally without animation
       return;
     }
 
@@ -62,9 +66,13 @@ const SplitText = ({
 
     if (!targets || targets.length === 0) {
       console.warn("No targets found for SplitText animation");
-      splitter.revert();
+      if (splitter) {
+        splitter.revert();
+      }
       return;
     }
+
+    targetsRef.current = targets;
 
     targets.forEach((t) => {
       t.style.willChange = "transform, opacity";
@@ -90,11 +98,13 @@ const SplitText = ({
       smoothChildTiming: true,
       onComplete: () => {
         animationCompletedRef.current = true;
-        gsap.set(targets, {
-          ...to,
-          clearProps: "willChange",
-          immediateRender: true,
-        });
+        if (targetsRef.current) {
+          gsap.set(targetsRef.current, {
+            ...to,
+            clearProps: "willChange",
+            immediateRender: true,
+          });
+        }
         onLetterAnimationComplete?.();
       },
     });
@@ -114,10 +124,14 @@ const SplitText = ({
         scrollTriggerRef.current.kill();
         scrollTriggerRef.current = null;
       }
-      gsap.killTweensOf(targets);
-      if (splitter) {
-        splitter.revert();
+      if (targetsRef.current) {
+        gsap.killTweensOf(targetsRef.current);
       }
+      if (splitterRef.current) {
+        splitterRef.current.revert();
+        splitterRef.current = null;
+      }
+      targetsRef.current = null;
     };
   }, [
     text,
@@ -139,9 +153,10 @@ const SplitText = ({
       style={{
         textAlign,
         overflow: "hidden",
-        display: "inline-block",
-        whiteSpace: "normal",
+        display: "block",
+        whiteSpace: "pre-line",
         wordWrap: "break-word",
+        lineHeight: "1.2",
       }}
     >
       {text}
