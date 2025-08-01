@@ -95,11 +95,39 @@
   box-sizing: border-box;
 }
 
+/* Normalize font rendering across browsers */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  text-rendering: optimizeSpeed;
+}
+
+/* Prevent text size adjustments on orientation change */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Ensure consistent viewport behavior */
+@viewport {
+  width: device-width;
+  initial-scale: 1;
+  maximum-scale: 1;
+  user-scalable: no;
+}
+
 /* Ensure consistent rendering across environments */
 html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  text-rendering: optimizeSpeed;
 }
 
 body {
@@ -107,6 +135,8 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  text-rendering: optimizeSpeed;
 }
 
 body {
@@ -1615,6 +1645,8 @@ section h2 {
   font-size: 16px; /* Ensure consistent base font size */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  text-rendering: optimizeSpeed;
 }
 
 .hero-content {
@@ -1660,7 +1692,7 @@ section h2 {
 }
 
 .hero .scroll-float-text {
-  font-size: clamp(8rem, 24vw, 16rem) !important;
+  font-size: clamp(6rem, 18vw, 12rem) !important;
   font-weight: 900 !important;
   color: #ffffff !important;
   line-height: 1.1 !important;
@@ -1670,7 +1702,7 @@ section h2 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizeSpeed;
   word-wrap: break-word;
   overflow-wrap: break-word;
   max-width: 100%;
@@ -1690,7 +1722,7 @@ section h2 {
 }
 
 .hero .hero-subtitle-text {
-  font-size: clamp(1.5rem, 4vw, 2.5rem) !important;
+  font-size: clamp(1.25rem, 3vw, 2rem) !important;
   font-weight: 600 !important;
   color: #8b5cf6 !important; /* Purple color */
   line-height: 1.2 !important;
@@ -1700,7 +1732,7 @@ section h2 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizeSpeed;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -1719,8 +1751,8 @@ section h2 {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
-  padding: 2rem 4rem;
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  padding: 1.5rem 3rem;
+  font-size: clamp(1.25rem, 3vw, 2rem);
   font-weight: 700;
   border-radius: 16px;
   cursor: pointer;
@@ -1741,8 +1773,8 @@ section h2 {
   background: rgba(255, 255, 255, 0.1);
   color: white;
   border: 2px solid rgba(255, 255, 255, 0.3);
-  padding: 2rem 4rem;
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  padding: 1.5rem 3rem;
+  font-size: clamp(1.25rem, 3vw, 2rem);
   font-weight: 700;
   border-radius: 16px;
   cursor: pointer;
