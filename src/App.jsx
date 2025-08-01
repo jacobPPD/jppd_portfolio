@@ -2,6 +2,7 @@ import { useState, useEffect, lazy, Suspense } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
 import SplitText from './SplitText'
+import ScrollFloat from './ScrollFloat'
 
 // Lazy load project components for better performance
 const UAVProject = lazy(() => import('./components/UAVProject'))
@@ -181,44 +182,57 @@ function App() {
             {/* Hero Section */}
             <section id="home" className="hero">
               <div className="hero-content">
-                <div className="hero-title-container">
-                  <SplitText
-                    text="Hello World,"
-                    className="hero-title-line"
-                    delay={50}
-                    duration={0.8}
-                    ease="power3.out"
-                    splitType="words"
-                    from={{ opacity: 0, y: 60 }}
-                    to={{ opacity: 1, y: 0 }}
-                    threshold={0.1}
-                    rootMargin="-50px"
-                    textAlign="center"
-                  />
-                  <SplitText
-                    text="I'm Jacob Papas Dennerline"
-                    className="hero-title-line"
-                    delay={100}
-                    duration={0.8}
-                    ease="power3.out"
-                    splitType="words"
-                    from={{ opacity: 0, y: 60 }}
-                    to={{ opacity: 1, y: 0 }}
-                    threshold={0.1}
-                    rootMargin="-50px"
-                    textAlign="center"
-                    onLetterAnimationComplete={handleAnimationComplete}
-                  />
+                <div className="hero-text-container">
+                  <ScrollFloat
+                    animationDuration={1}
+                    ease='back.inOut(2)'
+                    scrollStart='top bottom'
+                    scrollEnd='top center'
+                    stagger={0.03}
+                    containerClassName="hero-title-line"
+                    textClassName="hero-title-text"
+                  >
+                    Hello World
+                  </ScrollFloat>
+                  
+                  <div className="hero-spacer"></div>
+                  
+                  <ScrollFloat
+                    animationDuration={1.2}
+                    ease='back.inOut(2)'
+                    scrollStart='top bottom'
+                    scrollEnd='center center'
+                    stagger={0.04}
+                    containerClassName="hero-title-line"
+                    textClassName="hero-title-text"
+                  >
+                    I'm Jacob Papas Dennerline
+                  </ScrollFloat>
+                  
+                  <ScrollFloat
+                    animationDuration={1.4}
+                    ease='back.inOut(2)'
+                    scrollStart='top bottom'
+                    scrollEnd='center center'
+                    stagger={0.05}
+                    containerClassName="hero-subtitle-line"
+                    textClassName="hero-subtitle-text"
+                  >
+                    Full Stack Software Engineering and Masters Student
+                  </ScrollFloat>
                 </div>
-                <h2>Full-Stack Software Engineer & Intelligent Systems Engineer</h2>
-                <p>Passionate about machine learning, embedded systems, and creating innovative solutions</p>
-                <div className="hero-buttons">
-                  <button onClick={() => scrollToSection('projects')} className="btn-primary">
-                    View My Work
-                  </button>
-                  <button onClick={() => scrollToSection('contact')} className="btn-secondary">
-                    Get In Touch
-                  </button>
+                
+                <div className="hero-info">
+                  <h2>Full-Stack Software Engineer & Intelligent Systems Engineer</h2>
+                  <p>Passionate about machine learning, embedded systems, and creating innovative solutions</p>
+                  <div className="hero-buttons">
+                    <button onClick={() => scrollToSection('projects')} className="btn-primary">
+                      View My Work
+                    </button>
+                    <button onClick={() => scrollToSection('contact')} className="btn-secondary">
+                      Get In Touch
+                    </button>
+                  </div>
                 </div>
               </div>
             </section>
