@@ -1743,7 +1743,7 @@ section h2 {
   justify-content: center;
   align-items: center;
   gap: 3.2rem; /* 80% of 4rem */
-  margin-top: 2.4rem; /* 80% of 3rem */
+  margin-top: 0.8rem; /* Significantly reduced from 2.4rem */
   width: 100%;
 }
 
