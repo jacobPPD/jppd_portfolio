@@ -5,11 +5,19 @@ import SplitText from './SplitText'
 import ScrollFloat from './ScrollFloat'
 import Magnet from './Magnet'
 import GlassIcons from './GlassIcons'
+import Dock from './Dock'
+import { VscHome, VscPerson, VscBriefcase, VscProject, VscTools, VscMail } from 'react-icons/vsc'
+import Threads from './Threads'
+import SpotlightCard from './SpotlightCard'
 
 // Lazy load project components for better performance
 const UAVProject = lazy(() => import('./components/UAVProject'))
 const SmartSleeveProject = lazy(() => import('./components/SmartSleeveProject'))
 const StockPredictionProject = lazy(() => import('./components/StockPredictionProject'))
+
+// Lazy load experience components
+const AlliedExperience = lazy(() => import('./components/AlliedExperience'))
+const IUExperience = lazy(() => import('./components/IUExperience'))
 
 function App() {
   const [activeSection, setActiveSection] = useState('home')
@@ -94,95 +102,82 @@ function App() {
             <StockPredictionProject />
           </Suspense>
         } />
+        <Route path="/allied-experience" element={
+          <Suspense fallback={
+            <div className="loading-screen">
+              <div className="loading-content">
+                <div className="loading-spinner"></div>
+                <h2>Loading Allied Solutions Experience...</h2>
+              </div>
+            </div>
+          }>
+            <AlliedExperience />
+          </Suspense>
+        } />
+        <Route path="/iu-experience" element={
+          <Suspense fallback={
+            <div className="loading-screen">
+              <div className="loading-content">
+                <div className="loading-spinner"></div>
+                <h2>Loading Indiana University Experience...</h2>
+              </div>
+            </div>
+          }>
+            <IUExperience />
+          </Suspense>
+        } />
         <Route path="/" element={
           <>
-            {/* Navigation */}
-            <nav className="navbar">
-              <div className="nav-brand">JPPD</div>
-              <div className="nav-links">
-                <button 
-                  className={activeSection === 'home' ? 'active' : ''} 
-                  onClick={() => scrollToSection('home')}
-                  aria-label="Navigate to Home section"
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      scrollToSection('home');
-                    }
-                  }}
-                >
-                  Home
-                </button>
-                <button 
-                  className={activeSection === 'about' ? 'active' : ''} 
-                  onClick={() => scrollToSection('about')}
-                  aria-label="Navigate to About section"
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      scrollToSection('about');
-                    }
-                  }}
-                >
-                  About
-                </button>
-                <button 
-                  className={activeSection === 'experience' ? 'active' : ''} 
-                  onClick={() => scrollToSection('experience')}
-                  aria-label="Navigate to Experience section"
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      scrollToSection('experience');
-                    }
-                  }}
-                >
-                  Experience
-                </button>
-                <button 
-                  className={activeSection === 'projects' ? 'active' : ''} 
-                  onClick={() => scrollToSection('projects')}
-                  aria-label="Navigate to Projects section"
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      scrollToSection('projects');
-                    }
-                  }}
-                >
-                  Projects
-                </button>
-                <button 
-                  className={activeSection === 'skills' ? 'active' : ''} 
-                  onClick={() => scrollToSection('skills')}
-                  aria-label="Navigate to Skills section"
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      scrollToSection('skills');
-                    }
-                  }}
-                >
-                  Skills
-                </button>
-                <button 
-                  className={activeSection === 'contact' ? 'active' : ''} 
-                  onClick={() => scrollToSection('contact')}
-                  aria-label="Navigate to Contact section"
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      scrollToSection('contact');
-                    }
-                  }}
-                >
-                  Contact
-                </button>
-              </div>
-            </nav>
+            {/* Dock Navigation */}
+            <Dock 
+              items={[
+                { 
+                  icon: <VscHome size={18} />, 
+                  label: 'Home', 
+                  onClick: () => scrollToSection('home') 
+                },
+                { 
+                  icon: <VscPerson size={18} />, 
+                  label: 'About', 
+                  onClick: () => scrollToSection('about') 
+                },
+                { 
+                  icon: <VscBriefcase size={18} />, 
+                  label: 'Experience', 
+                  onClick: () => scrollToSection('experience') 
+                },
+                { 
+                  icon: <VscProject size={18} />, 
+                  label: 'Projects', 
+                  onClick: () => scrollToSection('projects') 
+                },
+                { 
+                  icon: <VscTools size={18} />, 
+                  label: 'Skills', 
+                  onClick: () => scrollToSection('skills') 
+                },
+                { 
+                  icon: <VscMail size={18} />, 
+                  label: 'Contact', 
+                  onClick: () => scrollToSection('contact') 
+                },
+              ]}
+              panelHeight={68}
+              baseItemSize={50}
+              magnification={70}
+            />
 
             {/* Hero Section */}
             <section id="home" className="hero">
+              {/* Threads Background */}
+              <div className="threads-background">
+                <Threads
+                  amplitude={1}
+                  distance={0}
+                  enableMouseInteraction={true}
+                  color={[0.4, 0.2, 0.8]} // Purple color to match your theme
+                />
+              </div>
               <div className="hero-content">
                 <div className="hero-text-container">
                   <ScrollFloat
@@ -291,32 +286,34 @@ function App() {
               <div className="container">
                 <h2>Professional Experience</h2>
                 <div className="experience-grid">
-                  <div className="experience-card">
-                    <div className="experience-header">
-                      <h3>Full-Stack Software Engineering Intern</h3>
-                      <span className="company">Allied Solutions</span>
-                      <span className="duration">May 2025 - Present</span>
-                    </div>
-                    <ul>
-                      <li>Developing Backend and Frontend features for the Centerpoint platform using C# and React.js</li>
-                      <li>Actively contributing to 5 sprint releases and delivering 10 feature stories with full testing and deployment support</li>
-                      <li>Collaborating cross-functionally with Engineering and AI development teams to migrate legacy services</li>
-                      <li>Delivering interdepartmental intern capstone project to a department of 200 engineers</li>
-                    </ul>
-                  </div>
-                  <div className="experience-card">
-                    <div className="experience-header">
-                      <h3>Assistant Instructor</h3>
-                      <span className="company">Indiana University - ENGR-E 222, ENGR-E 101</span>
-                      <span className="duration">August 2023 - May 2025</span>
-                    </div>
-                    <ul>
-                      <li>Facilitated development of over 60 unique machine learning models by guiding 60 students through hands-on labs</li>
-                      <li>Mentored over 200 undergraduate students in Python and advanced ML applications and containerization</li>
-                      <li>Delivered engaging lectures to groups of up to 40 students, utilizing innovative teaching methodologies</li>
-                      <li>Dedicated 10+ hours weekly to enhance technical proficiency and teamwork skills of students</li>
-                    </ul>
-                  </div>
+                  <Link to="/allied-experience" className="experience-link">
+                    <SpotlightCard className="experience-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
+                      <div className="experience-header">
+                        <h3>Full-Stack Software Engineering Intern</h3>
+                        <span className="company">Allied Solutions</span>
+                        <span className="duration">May 2025 - Present</span>
+                      </div>
+                      <div className="experience-skills">
+                        <div className="skill-box">C# Development</div>
+                        <div className="skill-box">React.js</div>
+                        <div className="skill-box">Agile/Scrum</div>
+                      </div>
+                    </SpotlightCard>
+                  </Link>
+                  <Link to="/iu-experience" className="experience-link">
+                    <SpotlightCard className="experience-spotlight-card assistant-instructor-card" spotlightColor="rgba(0, 229, 255, 0.2)">
+                      <div className="experience-header">
+                        <h3>Assistant Instructor</h3>
+                        <span className="company">ENGR-E 222, ENGR-E 101</span>
+                        <span className="duration">August 2023 - May 2025</span>
+                      </div>
+                      <div className="experience-skills">
+                        <div className="skill-box">Machine Learning</div>
+                        <div className="skill-box">Python</div>
+                        <div className="skill-box">Teaching</div>
+                      </div>
+                    </SpotlightCard>
+                  </Link>
                 </div>
               </div>
             </section>
