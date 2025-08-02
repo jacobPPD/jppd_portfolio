@@ -287,7 +287,7 @@ function App() {
                 <h2>Professional Experience</h2>
                 <div className="experience-grid">
                   <Link to="/allied-experience" className="experience-link">
-                    <SpotlightCard className="experience-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
+                    <SpotlightCard className="experience-spotlight-card assistant-instructor-card" spotlightColor="rgba(0, 229, 255, 0.2)">
                       <div className="experience-header">
                         <h3>Full-Stack Software Engineering Intern</h3>
                         <span className="company">Allied Solutions</span>
@@ -323,96 +323,53 @@ function App() {
               <div className="container">
                 <h2>Featured Projects</h2>
                 <div className="projects-grid">
-                  <div className="project-card">
-                    <div className="project-image">
-                      <div className="project-placeholder" role="img" aria-label="UAV Project">UAV</div>
-                    </div>
-                    <div className="project-content">
-                      <h3>Unmanned Aerial Vehicle</h3>
-                      <p>Engineered and built a full body UAV with 6 sensors, 3 actuators, and Arduino microcontroller. Implemented 2 PID controllers using Ziegler-Nichols method for precise flight control.</p>
-                      <div className="project-tech">
-                        <span>C++</span>
-                        <span>Arduino</span>
-                        <span>PID Control</span>
-                        <span>Embedded Systems</span>
+                  <Link to="/uav" className="project-link">
+                    <SpotlightCard className="project-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
+                      <div className="project-header">
+                        <div className="project-image-placeholder">
+                          <img src="./logos/UAV.png" alt="UAV Project" onError={handleImageError} onLoad={handleImageLoad} />
+                        </div>
+                        <h3>Unmanned Aerial Vehicle</h3>
                       </div>
-                      <div className="project-highlights">
-                        <span>4450 lines of autopilot code</span>
-                        <span>Stable autonomous flight</span>
-                        <span>Real-time control system</span>
+                      <div className="project-skills">
+                        <div className="skill-box">C++</div>
+                        <div className="skill-box">Arduino</div>
+                        <div className="skill-box">PID Control</div>
                       </div>
-                      <div className="project-actions">
-                        <Link 
-                          to="/uav" 
-                          className="btn-primary"
-                          aria-label="View detailed information about the UAV project"
-                        >
-                          View Details
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
+                    </SpotlightCard>
+                  </Link>
 
-                  <div className="project-card">
-                    <div className="project-image">
-                      <div className="project-placeholder" role="img" aria-label="Smart Sleeve Project">Smart Sleeve</div>
-                    </div>
-                    <div className="project-content">
-                      <h3>Smart Sleeve - Muscle Fatigue Detection</h3>
-                      <p>Wired, coded, and implemented 3 concurrent sensors to a MAX32630 microcontroller hosted in a compression sleeve for muscle activation monitoring.</p>
-                      <div className="project-tech">
-                        <span>Python</span>
-                        <span>C++</span>
-                        <span>React.js</span>
-                        <span>Machine Learning</span>
-                        <span>Neural Networks</span>
+                  <Link to="/smart-sleeve" className="project-link">
+                    <SpotlightCard className="project-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
+                      <div className="project-header">
+                        <div className="project-image-placeholder">
+                          <img src="./logos/smartsleeve.png" alt="Smart Sleeve Project" onError={handleImageError} onLoad={handleImageLoad} />
+                        </div>
+                        <h3>Smart Sleeve</h3>
                       </div>
-                      <div className="project-highlights">
-                        <span>36+ hours of muscle activation data</span>
-                        <span>Wearable interface</span>
-                        <span>Real-time fatigue detection</span>
+                      <div className="project-skills">
+                        <div className="skill-box">Python</div>
+                        <div className="skill-box">C++</div>
+                        <div className="skill-box">Machine Learning</div>
                       </div>
-                      <div className="project-actions">
-                        <Link 
-                          to="/smart-sleeve" 
-                          className="btn-primary"
-                          aria-label="View detailed information about the Smart Sleeve project"
-                        >
-                          View Details
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
+                    </SpotlightCard>
+                  </Link>
 
-                  <div className="project-card">
-                    <div className="project-image">
-                      <div className="project-placeholder" role="img" aria-label="Stock Prediction Project">Stock Prediction</div>
-                    </div>
-                    <div className="project-content">
-                      <h3>Stock Prediction Model</h3>
-                      <p>Developed a high-accuracy prediction model leveraging Convolutional Neural Networks to analyze stock movement patterns from five major stocks.</p>
-                      <div className="project-tech">
-                        <span>Python</span>
-                        <span>React.js</span>
-                        <span>CNN</span>
-                        <span>Machine Learning</span>
+                  <Link to="/stock-prediction" className="project-link">
+                    <SpotlightCard className="project-spotlight-card" spotlightColor="rgba(0, 229, 255, 0.2)">
+                      <div className="project-header">
+                        <div className="project-image-placeholder">
+                          <img src="./logos/Stock.png" alt="Stock Prediction Project" onError={handleImageError} onLoad={handleImageLoad} />
+                        </div>
+                        <h3>Stock Prediction Model</h3>
                       </div>
-                      <div className="project-highlights">
-                        <span>40+ stock movement trends</span>
-                        <span>Web interface for visualization</span>
-                        <span>Real-time data analysis</span>
+                      <div className="project-skills">
+                        <div className="skill-box">Python</div>
+                        <div className="skill-box">React.js</div>
+                        <div className="skill-box">CNN</div>
                       </div>
-                      <div className="project-actions">
-                        <Link 
-                          to="/stock-prediction" 
-                          className="btn-primary"
-                          aria-label="View detailed information about the Stock Prediction project"
-                        >
-                          View Details
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
+                    </SpotlightCard>
+                  </Link>
                 </div>
               </div>
             </section>

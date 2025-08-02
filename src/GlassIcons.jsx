@@ -36,6 +36,7 @@ const GlassIcons = ({ items, className }) => {
           className={`icon-btn ${item.customClass || ""}`}
           aria-label={item.label}
           type="button"
+          data-description={item.label}
         >
           <span
             className="icon-btn__back"
