@@ -4,7 +4,7 @@
 
 .scroll-float-text {
   display: inline-block;
-  font-size: clamp(0.96rem, 4.8vw, 6.4rem); /* 80% of previous values */
+  font-size: clamp(0.96rem, 5.28vw, 6.4rem); /* 4.8vw * 1.1 for 100% zoom perfection */
   font-weight: 900;
   text-align: left;
   line-height: 1.5;
