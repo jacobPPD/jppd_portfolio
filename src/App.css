@@ -1715,7 +1715,7 @@ section h2 {
 
 /* Hero subtitle styling */
 .hero .hero-subtitle-line {
-  margin-top: 1rem;
+  margin-top: 0.2rem; /* Minimal spacing */
   margin-bottom: 0;
   text-align: left;
   width: 100%;
@@ -1743,7 +1743,7 @@ section h2 {
   justify-content: center;
   align-items: center;
   gap: 3.2rem; /* 80% of 4rem */
-  margin-top: 0.8rem; /* Significantly reduced from 2.4rem */
+  margin-top: 0.2rem; /* Minimal spacing */
   width: 100%;
 }
 
