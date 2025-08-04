@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './ExperienceDetail.css';
+import StarBorder from '../StarBorder';
 
 const AlliedExperience = () => {
   return (
@@ -44,19 +45,26 @@ const AlliedExperience = () => {
             <div className="responsibilities-grid">
               <div className="responsibility-item">
                 <h3>Backend Development</h3>
-                <p>Developing robust backend features using C# for the Centerpoint platform, ensuring scalability and performance.</p>
+                <p>Working closely with Engineering and AI development teams to migrate legacy services and implement modern solutions using C# for the Centerpoint platform, ensuring scalability and performance.</p>
               </div>
               <div className="responsibility-item">
                 <h3>Frontend Development</h3>
                 <p>Building responsive and intuitive user interfaces using React.js, focusing on user experience and accessibility.</p>
+                <div style={{ marginTop: '1rem', textAlign: 'center' }}>
+                  <Link to="/frontend-showcase">
+                    <StarBorder
+                      as="button"
+                      color="cyan"
+                      speed="5s"
+                    >
+                      View the Frontend →
+                    </StarBorder>
+                  </Link>
+                </div>
               </div>
               <div className="responsibility-item">
                 <h3>Sprint Management</h3>
                 <p>Actively contributing to 5 sprint releases, delivering 10 feature stories with comprehensive testing and deployment support.</p>
-              </div>
-              <div className="responsibility-item">
-                <h3>Cross-functional Collaboration</h3>
-                <p>Working closely with Engineering and AI development teams to migrate legacy services and implement modern solutions.</p>
               </div>
             </div>
           </div>

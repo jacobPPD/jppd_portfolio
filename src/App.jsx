@@ -18,6 +18,7 @@ const StockPredictionProject = lazy(() => import('./components/StockPredictionPr
 // Lazy load experience components
 const AlliedExperience = lazy(() => import('./components/AlliedExperience'))
 const IUExperience = lazy(() => import('./components/IUExperience'))
+const FrontendShowcase = lazy(() => import('./components/FrontendShowcase'))
 
 // WebGL Debug Component
 const WebGLDebug = () => {
@@ -191,45 +192,57 @@ function App() {
             <IUExperience />
           </Suspense>
         } />
+        <Route path="/frontend-showcase" element={
+          <Suspense fallback={
+            <div className="loading-screen">
+              <div className="loading-content">
+                <div className="loading-spinner"></div>
+                <h2>Loading Frontend Showcase...</h2>
+              </div>
+            </div>
+          }>
+            <FrontendShowcase />
+          </Suspense>
+        } />
         <Route path="/" element={
           <>
             {/* Dock Navigation */}
             <Dock 
               items={[
                 { 
-                  icon: <VscHome size={18} />, 
+                  icon: <VscHome size={24} />, 
                   label: 'Home', 
                   onClick: () => scrollToSection('home') 
                 },
                 { 
-                  icon: <VscPerson size={18} />, 
+                  icon: <VscPerson size={24} />, 
                   label: 'About', 
                   onClick: () => scrollToSection('about') 
                 },
                 { 
-                  icon: <VscBriefcase size={18} />, 
+                  icon: <VscBriefcase size={24} />, 
                   label: 'Experience', 
                   onClick: () => scrollToSection('experience') 
                 },
                 { 
-                  icon: <VscProject size={18} />, 
+                  icon: <VscProject size={24} />, 
                   label: 'Projects', 
                   onClick: () => scrollToSection('projects') 
                 },
                 { 
-                  icon: <VscTools size={18} />, 
+                  icon: <VscTools size={24} />, 
                   label: 'Skills', 
                   onClick: () => scrollToSection('skills') 
                 },
                 { 
-                  icon: <VscMail size={18} />, 
+                  icon: <VscMail size={24} />, 
                   label: 'Contact', 
                   onClick: () => scrollToSection('contact') 
                 },
               ]}
-              panelHeight={68}
-              baseItemSize={50}
-              magnification={70}
+              panelHeight={80}
+              baseItemSize={60}
+              magnification={90}
             />
 
             {/* Hero Section */}
