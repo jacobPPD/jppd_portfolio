@@ -19,9 +19,62 @@ const StockPredictionProject = lazy(() => import('./components/StockPredictionPr
 const AlliedExperience = lazy(() => import('./components/AlliedExperience'))
 const IUExperience = lazy(() => import('./components/IUExperience'))
 
+// WebGL Debug Component
+const WebGLDebug = () => {
+  const [webglInfo, setWebglInfo] = useState(null);
+
+  useEffect(() => {
+    const canvas = document.createElement('canvas');
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    
+    if (gl) {
+      const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+      setWebglInfo({
+        vendor: gl.getParameter(gl.VENDOR),
+        renderer: gl.getParameter(gl.RENDERER),
+        version: gl.getParameter(gl.VERSION),
+        unmaskedRenderer: debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : 'Not available',
+        unmaskedVendor: debugInfo ? gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) : 'Not available'
+      });
+    } else {
+      setWebglInfo({ error: 'WebGL not supported' });
+    }
+  }, []);
+
+  if (!webglInfo) return null;
+
+  return (
+    <div style={{ 
+      position: 'fixed', 
+      top: '10px', 
+      right: '10px', 
+      background: 'rgba(0,0,0,0.8)', 
+      color: 'white', 
+      padding: '10px', 
+      fontSize: '12px', 
+      zIndex: 1000,
+      maxWidth: '300px'
+    }}>
+      <strong>WebGL Debug Info:</strong><br/>
+      {webglInfo.error ? (
+        <span style={{color: 'red'}}>{webglInfo.error}</span>
+      ) : (
+        <>
+          Vendor: {webglInfo.vendor}<br/>
+          Renderer: {webglInfo.renderer}<br/>
+          Version: {webglInfo.version}<br/>
+          Unmasked Renderer: {webglInfo.unmaskedRenderer}<br/>
+          Unmasked Vendor: {webglInfo.unmaskedVendor}
+        </>
+      )}
+    </div>
+  );
+};
+
 function App() {
   const [activeSection, setActiveSection] = useState('home')
   const [isLoading, setIsLoading] = useState(true)
+  const [showDebug, setShowDebug] = useState(false)
 
   useEffect(() => {
     // Simulate loading time for better UX
@@ -30,6 +83,17 @@ function App() {
     }, 1000)
     return () => clearTimeout(timer)
   }, [])
+
+  // Debug mode toggle (hold Ctrl+Shift+D)
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.ctrlKey && e.shiftKey && e.key === 'D') {
+        setShowDebug(prev => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId)
@@ -65,6 +129,7 @@ function App() {
 
   return (
     <div className="App">
+      {showDebug && <WebGLDebug />}
       <Routes>
         <Route path="/uav" element={
           <Suspense fallback={
