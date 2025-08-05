@@ -43,25 +43,24 @@ const AlliedExperience = () => {
           <div className="experience-section">
             <h2>Key Responsibilities</h2>
             <div className="responsibilities-grid">
-              <div className="responsibility-item">
-                <h3>Backend Development</h3>
-                <p>Working closely with Engineering and AI development teams to migrate legacy services and implement modern solutions using C# for the Centerpoint platform, ensuring scalability and performance.</p>
-              </div>
-              <div className="responsibility-item">
-                <h3>Frontend Development</h3>
-                <p>Building responsive and intuitive user interfaces using React.js, focusing on user experience and accessibility.</p>
-                <div style={{ marginTop: '1rem', textAlign: 'center' }}>
-                  <Link to="/frontend-showcase">
-                    <StarBorder
-                      as="button"
-                      color="cyan"
-                      speed="5s"
-                    >
-                      View the Frontend →
-                    </StarBorder>
-                  </Link>
-                </div>
-              </div>
+                             <div className="responsibility-item">
+                 <h3>Backend Development</h3>
+                 <p>Working closely with Engineering and AI development teams to migrate legacy services and implement modern solutions using C# for the Centerpoint platform, ensuring scalability and performance.</p>
+                                   <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+                    <Link to="/backend-showcase" className="frontend-link-btn">
+                      View Backend →
+                    </Link>
+                  </div>
+               </div>
+               <div className="responsibility-item">
+                 <h3>Frontend Development</h3>
+                 <p>Building responsive and intuitive user interfaces using React.js, focusing on user experience and accessibility.</p>
+                                   <div style={{ marginTop: '5rem', textAlign: 'center' }}>
+                    <Link to="/frontend-showcase" className="frontend-link-btn">
+                      View Frontend →
+                    </Link>
+                  </div>
+               </div>
               <div className="responsibility-item">
                 <h3>Sprint Management</h3>
                 <p>Actively contributing to 5 sprint releases, delivering 10 feature stories with comprehensive testing and deployment support.</p>
@@ -101,23 +100,7 @@ const AlliedExperience = () => {
             </div>
           </div>
 
-          <div className="experience-section">
-            <h2>Impact & Results</h2>
-            <div className="results-grid">
-              <div className="result-item">
-                <h3>10 Feature Stories</h3>
-                <p>Successfully delivered 10 feature stories with comprehensive testing and deployment support.</p>
-              </div>
-              <div className="result-item">
-                <h3>5 Sprint Releases</h3>
-                <p>Actively contributed to 5 sprint releases, maintaining high code quality and meeting deadlines.</p>
-              </div>
-              <div className="result-item">
-                <h3>200+ Engineers</h3>
-                <p>Presented capstone project to a department of 200 engineers, demonstrating technical leadership.</p>
-              </div>
-            </div>
-          </div>
+
         </div>
 
         <div className="experience-navigation">

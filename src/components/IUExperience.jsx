@@ -47,34 +47,30 @@ const IUExperience = () => {
                 <p>Facilitated development of over 60 unique machine learning models by guiding 60 students through hands-on labs.</p>
               </div>
               <div className="responsibility-item">
-                <h3>Student Mentorship</h3>
-                <p>Mentored over 200 undergraduate students in Python and advanced ML applications and containerization.</p>
+                <h3>Student Mentorship & Support</h3>
+                <p>Mentored over 200 undergraduate students in Python and advanced ML applications, dedicating 10+ hours weekly to enhance technical proficiency and teamwork skills.</p>
               </div>
               <div className="responsibility-item">
                 <h3>Lecture Delivery</h3>
                 <p>Delivered engaging lectures to groups of up to 40 students, utilizing innovative teaching methodologies.</p>
               </div>
-              <div className="responsibility-item">
-                <h3>Technical Support</h3>
-                <p>Dedicated 10+ hours weekly to enhance technical proficiency and teamwork skills of students.</p>
-              </div>
             </div>
           </div>
 
           <div className="experience-section">
-            <h2>Teaching Achievements</h2>
+            <h2>Teaching Achievements & Methodology</h2>
             <div className="achievements-list">
               <div className="achievement-item">
                 <h3>60+ ML Models</h3>
-                <p>Successfully guided students through the development of over 60 unique machine learning models, ensuring understanding of core concepts.</p>
+                <p>Successfully guided students through the development of over 60 unique machine learning models, ensuring understanding of core concepts through hands-on labs and real-world projects.</p>
               </div>
               <div className="achievement-item">
                 <h3>200+ Students Mentored</h3>
-                <p>Provided personalized mentorship to over 200 undergraduate students, helping them master Python and ML applications.</p>
+                <p>Provided personalized mentorship to over 200 undergraduate students, adapting teaching methods to individual learning styles and helping them master Python and ML applications.</p>
               </div>
               <div className="achievement-item">
                 <h3>40 Student Lectures</h3>
-                <p>Delivered engaging lectures to groups of up to 40 students, maintaining high engagement and comprehension rates.</p>
+                <p>Delivered engaging lectures to groups of up to 40 students, utilizing cutting-edge teaching methodologies to maintain high engagement and comprehension rates.</p>
               </div>
             </div>
           </div>
@@ -90,42 +86,6 @@ const IUExperience = () => {
               <span className="tech-tag">Data Analysis</span>
               <span className="tech-tag">Scikit-learn</span>
               <span className="tech-tag">TensorFlow</span>
-            </div>
-          </div>
-
-          <div className="experience-section">
-            <h2>Impact & Results</h2>
-            <div className="results-grid">
-              <div className="result-item">
-                <h3>60 Students</h3>
-                <p>Guided 60 students through hands-on labs, resulting in successful development of unique ML models.</p>
-              </div>
-              <div className="result-item">
-                <h3>200+ Mentored</h3>
-                <p>Mentored over 200 undergraduate students in Python and advanced ML applications.</p>
-              </div>
-              <div className="result-item">
-                <h3>40 Student Groups</h3>
-                <p>Delivered engaging lectures to groups of up to 40 students, maintaining high engagement levels.</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="experience-section">
-            <h2>Teaching Methodology</h2>
-            <div className="methodology-list">
-              <div className="methodology-item">
-                <h3>Hands-on Learning</h3>
-                <p>Emphasized practical application through hands-on labs and real-world projects.</p>
-              </div>
-              <div className="methodology-item">
-                <h3>Personalized Mentorship</h3>
-                <p>Provided one-on-one guidance to students, adapting teaching methods to individual learning styles.</p>
-              </div>
-              <div className="methodology-item">
-                <h3>Innovative Techniques</h3>
-                <p>Utilized cutting-edge teaching methodologies to enhance student engagement and comprehension.</p>
-              </div>
             </div>
           </div>
         </div>

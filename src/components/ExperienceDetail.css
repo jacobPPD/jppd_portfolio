@@ -993,4 +993,49 @@
   transform: scale(1.02);
   box-shadow: var(--shadow-lg);
   filter: brightness(1.1);
+}
+
+/* Frontend Link Button */
+.frontend-link-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--gradient-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.frontend-link-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  background: var(--gradient-secondary);
+}
+
+.frontend-link-btn:active {
+  transform: translateY(0);
+}
+
+/* DecryptedText Styles */
+.all-letters {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.all-letters:hover {
+  transform: scale(1.02);
+}
+
+.encrypted {
+  color: var(--primary-purple);
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
+}
+
+.revealed {
+  color: var(--text-primary);
+  font-weight: 600;
 } 

@@ -19,6 +19,7 @@ const StockPredictionProject = lazy(() => import('./components/StockPredictionPr
 const AlliedExperience = lazy(() => import('./components/AlliedExperience'))
 const IUExperience = lazy(() => import('./components/IUExperience'))
 const FrontendShowcase = lazy(() => import('./components/FrontendShowcase'))
+const BackendShowcase = lazy(() => import('./components/BackendShowcase'))
 
 // WebGL Debug Component
 const WebGLDebug = () => {
@@ -202,6 +203,18 @@ function App() {
             </div>
           }>
             <FrontendShowcase />
+          </Suspense>
+        } />
+        <Route path="/backend-showcase" element={
+          <Suspense fallback={
+            <div className="loading-screen">
+              <div className="loading-content">
+                <div className="loading-spinner"></div>
+                <h2>Loading Backend Showcase...</h2>
+              </div>
+            </div>
+          }>
+            <BackendShowcase />
           </Suspense>
         } />
         <Route path="/" element={
